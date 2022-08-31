@@ -1,0 +1,9 @@
+#include "/Engine/Public/Platform.ush"
+
+RWStructuredBuffer<float> OutputBuffer;
+
+[numthreads(1, 1, 1)]
+void Main(uint ThreadId : SV_DispatchThreadID)
+{
+    OutputBuffer[ThreadId] = 125.0f;
+}
